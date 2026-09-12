@@ -5,7 +5,9 @@ def subtract(a, b):
     return a - b
 
 def divide(a, b):
-    return a / b  # bug: doesn't handle b == 0, raises ZeroDivisionError
+    if b == 0:
+        raise ValueError("Cannot divide by zero")
+    return a / b
 
 def average(numbers):
-    return sum(numbers) / len(numbers)  # same bug: empty list crashes this
+    return sum(numbers) / len(numbers)
